@@ -15,7 +15,8 @@ exports.register = async (req, res) => {
       role,
     });
     await user.save();
-    res.status(201).json(user);
+    const {password:pwd, ...resp} = user.toObject();
+    res.status(201).json(resp);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

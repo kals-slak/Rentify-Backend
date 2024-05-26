@@ -19,6 +19,7 @@ const propertySchema = new mongoose.Schema({
   amenities: [{ type: String }],
   rent: { type: Number, required: true },
   images: [{ type: String }], // URLs of property images
+  likes: { type: Number, default: 0 },
   seller: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
